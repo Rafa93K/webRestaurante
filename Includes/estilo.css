@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+
+/*
+COLORES
+#30312E → gris oscuro verdoso
+#D3CCBC → beige claro
+
+
+*/
+* {
+  font-family: "Playfair Display", serif;
+}
+body {
+  margin: 0;
+  background: #d3ccbc;
+}
+h1,
+h2,
+h3 {
+  font-family: "Patrick Hand", cursive;
+  font-size: 36px;
+}
+
+h1 {
+  color: #2f2e31; /* gris oscuro verdoso */
+  text-align: center;
+  text-decoration-line: underline;
+  text-decoration-color: #9ca2af; /*#9ca2af; #E0BB5F; #E07A5F; */
+  text-decoration-style: wavy;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+/* ----------------- HEADER -------------------- */
+header {
+  background: #30312e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* LOGO */
+.logo img {
+  width: 260px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.4));
+}
+
+/* NAV */
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+header nav a {
+  color: #d3ccbc;
+  text-decoration: none;
+  font-family: "Patrick Hand", cursive;
+  font-size: 40px;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* Efecto moderno bajo enlaces */
+header nav a::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #bcc3d3;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+header nav a:hover {
+  color: #bcc3d3;
+}
+
+/* ------------------ MAIN -------------------- */
+main {
+  width: 90%;
+  margin: 20px auto 120px auto; /* espacio para el footer */
+}
+
+/* --- GALERÍA (4 imágenes) --- */
+.galeria {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+  margin-top: 40px;
+}
+
+.galeria .foto {
+  position: absolute;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.galeria .foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Posiciones */
+.f1 {
+  width: 42%;
+  height: 70%;
+  left: 0;
+  top: 15%;
+  transform: rotate(-3deg);
+}
+
+.f2 {
+  width: 42%;
+  height: 70%;
+  right: 0;
+  top: 5%;
+  transform: rotate(3deg);
+}
+
+.f3 {
+  width: 32%;
+  height: 55%;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-40%) rotate(-1deg);
+}
+
+.f4 {
+  width: 30%;
+  height: 50%;
+  left: 20%;
+  top: 0;
+  transform: rotate(1deg);
+}
+
+/* Hover */
+.galeria .foto:hover {
+  transform: scale(1.04) rotate(0deg);
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.55);
+}
+/* ------------------FIN  MAIN -------------------- */
+
+/* ------------------- FOOTER -------------------- */
+footer {
+  background: #30312e;
+  border-top: 1px solid #d3ccbc;
+  padding: 15px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+}
+
+footer nav {
+  display: flex;
+  gap: 25px;
+}
+
+footer a {
+  color: #d3ccbc;
+  text-decoration: none;
+  display: flex;
+  transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+  opacity: 0.7;
+}
+
+footer img {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+/* Instagram desplazado a la derecha */
+footer #insta {
+  position: absolute;
+  right: 10%;
+}
+
+/* ----------------- RESPONSIVE -------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .logo img {
+    width: 200px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 750px) {
+  header nav a {
+    font-size: 18px;
+  }
+  footer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    justify-content: flex-start;
+  }
+  footer #insta {
+    position: absolute;
+    right: 15%;
+  }
+  .slider-container {
+    height: 55vh;
+  }
+  .galeria {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    position: static;
+  }
+  .galeria .foto {
+    position: static;
+    width: 100%;
+    height: 200px;
+    transform: none !important;
+  }
+}
+
+/* ----- TARJETAS ESPECIALES ----- */
+
+.descripcion-especial {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #30312e;
+  font-style: italic;
+}
+
+.grid-platos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.plato-card {
+  background: #30312e;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  color: #d3ccbc;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.plato-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}
+
+.plato-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.plato-card h3 {
+  margin: 15px 0 5px;
+  font-size: 22px;
+}
+
+.plato-card p {
+  margin: 0 15px 20px;
+  font-size: 16px;
+  color: #d3ccbc;
+}
+.plato-card .precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: #bcc3d3;
+}
+
+.seccion-titulo {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #30312e;
+  border-left: 6px solid #30312e;
+  padding-left: 12px;
+}
+
+/*ADMINISTRADOR*/
+/* Secciones del panel de administrador */
+.admin-section {
+  margin-top: 40px;
+}
+
+.form-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background-color: #dadee99a;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+}
+
+.form-admin input,
+.form-admin select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+.form-admin button {
+  width: fit-content;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 15px;
+  font-size: 18px;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+  background-color: #b63636;
+}
+
+.btn-eliminar:hover {
+  background-color: #8a2727;
+}
+
+.form-adminEspecial {
+  display: flex;
+  padding: 20px;
+  background-color: #dadee99a;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+}
+
+/*MOSTRAR ESPECIALS */
+.form-adminEspecial input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  appearance: none; /* IMPORTANTE */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: rgb(241, 189, 139);
+  border: 2px solid #30312e;
+  border-radius: 5px;
+}
+
+.form-adminEspecial input[type="checkbox"]:checked {
+  background-color: #85b12e;
+}
+.form-adminEspecial input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 18px;
+  position: relative;
+  left: 3px;
+  top: -1px;
+}
+
+/*página reservar*/
+
+/* CONTENEDOR DEL FORMULARIO */
+
+.reserva-main {
+  background-image: url("../Img/barraF.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  border-radius: 15px;
+}
+
+.descripcion-reserva {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  color: #e9dcca;
+
+  /* borde suave */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.descripcion-reserva a {
+  color: #f0e6d2;
+  text-decoration: underline;
+}
+
+.reserva-container {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+/* FORMULARIO */
+.reserva-form {
+  background: #dadee9be;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* CAMPOS */
+.reserva-form input,
+.reserva-form textarea,
+.reserva-form select,
+.reserva-form option {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  font-size: 18px;
+}
+.reserva-form #mensaje {
+  max-width: 100%;
+  max-height: 250px;
+}
+
+/* BOTÓN */
+.reserva-form button {
+  background: #30312e;
+  color: #d3ccbc;
+  padding: 12px;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reserva-form button:hover {
+  background: #50514f;
+}
+
+/*PÁGINA DE CONOCENOS*/
+
+/* SOLO para la página de Conócenos */
+body.conocenos main.conocenos-main {
+  background-image: url("../Img/salon.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+/* Caja del contenido (para que el texto quede legible sobre la imagen) */
+.info-conocenos {
+  background: rgba(0, 0, 0, 0.55);
+  color: #f5e5c0;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.info-conocenos h1 {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+  color: #c79a56;
+}
+
+.descripcion {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.horario {
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Mapa */
+.mapa {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Proporción correcta */
+  margin-top: 20px;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+/*PAGINA PARA EL ADMINISTRADOR VER RESERVAS*/
+
+body.admin-reservas .reservas-main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.selector-fecha {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tabla-reservas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.tabla-reservas th,
+.tabla-reservas td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
+}
+.tabla-reservas td {
+  background-color: cadetblue;
+}
+
+.tabla-reservas th {
+  background-color: #c79a56;
+  color: white;
+}
+
+#sin-reservas {
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/*PARA QUE EL ADMINISTRADOR PUEDA AÑADIR UNA RESERVA*/
+
+.formulario-reserva-admin {
+  margin: 40px auto;
+  max-width: 600px;
+  background-color: #dadee99a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+}
+
+.formulario-reserva-admin form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.formulario-reserva-admin input,
+.formulario-reserva-admin textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+}
+
+.formulario-reserva-admin button {
+  margin-top: 10px;
+  padding: 12px;
+  border: none;
+  background-color: #30312e;
+  color: beige;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.formulario-reserva-admin button:hover {
+  background-color: #50514f;
+}
+/*BOTON DE LA PAG VER RESERVAS*/
+#cancelar {
+  background-color: rgb(202, 34, 34);
+  border-radius: 5px;
+  /*añadir una x como contenido*/
+  font-weight: bold;
+  color: white;
+}
+
+/*acceso admin oculto*/
+.admin-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  opacity: 0; /* invisible */
+  z-index: 9999;
+}
