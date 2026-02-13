@@ -28,10 +28,15 @@ h1 {
   color: #2f2e31; /* gris oscuro verdoso */
   text-align: center;
   text-decoration-line: underline;
-  text-decoration-color: #9ca2af; /*#9ca2af; #E0BB5F; #E07A5F; */
-  text-decoration-style: wavy;
-  text-decoration-thickness: 2px;
+  text-decoration-color: #2f2e31; /*#9ca2af; #E0BB5F; #E07A5F; */
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
   text-underline-offset: 4px;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #060d1d;
 }
 
 /* ----------------- HEADER -------------------- */
@@ -44,6 +49,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  height: 80px;
 }
 
 /* LOGO */
@@ -593,7 +599,7 @@ body.admin-reservas .reservas-main {
   background-color: #50514f;
 }
 /*BOTON DE LA PAG VER RESERVAS*/
-#cancelar {
+.btn-cancelar {
   background-color: rgb(202, 34, 34);
   border-radius: 5px;
   /*añadir una x como contenido*/

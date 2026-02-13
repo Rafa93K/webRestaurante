@@ -79,7 +79,7 @@ if (!isset($_SESSION["adminFogon"]))
             <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
         </div>
         <nav>
-            <a href="verReservas.html">Ver Reservas</a>
+            <a href="verReservas.php">Ver Reservas</a>
         </nav>
         </header>
 
