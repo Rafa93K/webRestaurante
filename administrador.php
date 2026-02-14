@@ -76,7 +76,7 @@ if (!isset($_SESSION["adminFogon"]))
     <body>
         <header>
         <div class="logo">
-            <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
+            <a href="index.php"><img src="Img/fogone_clarito.png" /></a>
         </div>
         <nav>
             <a href="verReservas.php">Ver Reservas</a>

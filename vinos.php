@@ -2,7 +2,8 @@
 require "./conexion.php";
 
 // Secciones de vinos (orden fijo)
-$opcionesVinos = ["Tinto","Blanco","Rosado","Espumoso"];
+$opcionesVinos = ["tinto","blanco","rosado","espumoso"];
+
 
 // Traemos todos los productos tipo vinos
 $sql = "SELECT id_producto, nombre, descripcion, precio, subtipo, imagen
@@ -32,7 +33,7 @@ foreach ($productos as $p) {
 <body>
 <header>
   <div class="logo">
-    <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
+    <a href="index.php"><img src="Img/fogone_clarito.png" /></a>
   </div>
   <nav>
     <a href="carta.php">Carta</a>
@@ -45,7 +46,8 @@ foreach ($productos as $p) {
   <h1>Nuestra Selección de Vinos</h1>
 
   <?php foreach($opcionesVinos as $subtipo): ?>
-    <h2 class="seccion-titulo"><?= htmlspecialchars($subtipo) ?></h2>
+    <h2 class="seccion-titulo"><?= ucfirst($subtipo) ?></h2>
+
     <div class="grid-platos">
 
       <?php if (!isset($porSubtipo[$subtipo]) || count($porSubtipo[$subtipo]) === 0): ?>
@@ -58,7 +60,7 @@ foreach ($productos as $p) {
               $img = $p["imagen"];
               if ($img === null || trim($img) === "") $img = "default.jpg";
             ?>
-            <img src="Img/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($p["nombre"]) ?>" />
+            <img src="Img/vinos/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($p["nombre"]) ?>" />
 
             <h3><?= htmlspecialchars($p["nombre"]) ?></h3>
             <p><?= htmlspecialchars($p["descripcion"]) ?></p>
@@ -72,16 +74,7 @@ foreach ($productos as $p) {
 
 </main>
 
-<footer>
-  <nav>
-    <a href="#privacidad">Política de Privacidad</a>
-    <a href="#cookies">Política de Cookies</a>
-    <a href="#terminos">Términos y Condiciones</a>
-    <a id="insta" href="https://www.instagram.com/fogonpya/">
-      <img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón 2019
-    </a>
-  </nav>
-</footer>
+   <?php include 'Includes/footer.php'; ?>
 
 <!-- ocultar enlace especiales si config lo desactiva -->
 <script>

@@ -14,7 +14,7 @@
 
   <body class="admin-reservas">
     <header>
-      <div class="logo"><a href="index.html"><img src="Img/fogone_clarito.png" /></a></div>
+      <div class="logo"><a href="index.php"><img src="Img/fogone_clarito.png" /></a></div>
       <nav>
         <a href="administrador.php">Panel Administrador</a>
       </nav>
@@ -116,7 +116,7 @@
                       const tr = document.createElement('tr');
 
                       tr.innerHTML = `
-                          <td>${reserva.hora}</td>
+                          <td>${reserva.hora.substring(0, 5)}</td>
                           <td>${reserva.nombre_cliente}</td>
                           <td>${reserva.personas}</td>
                           <td>${reserva.telefono}</td>

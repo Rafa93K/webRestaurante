@@ -32,7 +32,7 @@ foreach ($productos as $p) {
 <body>
 <header>
   <div class="logo">
-    <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
+    <a href="index.php"><img src="Img/fogone_clarito.png" /></a>
   </div>
   <nav>
     <a href="carta.php">Carta</a>
@@ -58,7 +58,7 @@ foreach ($productos as $p) {
               $img = $p["imagen"];
               if ($img === null || trim($img) === "") $img = "default.jpg";
             ?>
-            <img src="Img/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($p["nombre"]) ?>" />
+            <img src="Img/carta/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($p["nombre"]) ?>" />
 
             <h3><?= htmlspecialchars($p["nombre"]) ?></h3>
             <p><?= htmlspecialchars($p["descripcion"]) ?></p>
@@ -72,16 +72,7 @@ foreach ($productos as $p) {
 
 </main>
 
-<footer>
-  <nav>
-    <a href="#privacidad">Política de Privacidad</a>
-    <a href="#cookies">Política de Cookies</a>
-    <a href="#terminos">Términos y Condiciones</a>
-    <a id="insta" href="https://www.instagram.com/fogonpya/">
-      <img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón 2019
-    </a>
-  </nav>
-</footer>
+   <?php include 'Includes/footer.php'; ?>
 
 <!-- ocultar enlace especiales -->
 <script>

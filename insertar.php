@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit;
         }
 
-        // extensión final según MIME (más fiable)
+        // extensión final según MIME
         $ext = match ($mime) {
             "image/jpeg" => "jpg",
             "image/png"  => "png",
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $nombreImagen = uniqid("prod_", true) . "." . $ext;
 
         // Carpeta destino
-        $carpeta = __DIR__ . "/Img/";
+        $carpeta = __DIR__ . "/Img/$tipo/";
         if (!is_dir($carpeta)) {
             mkdir($carpeta, 0755, true);
         }

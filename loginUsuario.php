@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body align="center">
 <header>
       <div class="logo">
-        <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
+        <a href="index.php"><img src="Img/fogone_clarito.png" /></a>
       </div>
       <nav>
         <nav>
@@ -83,13 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </main>
 <footer>
       <nav>
-        <a href="#privacidad">Política de Privacidad</a>
-        <a href="#cookies">Política de Cookies</a>
-        <a href="#terminos">Términos y Condiciones</a>
-        <a id="insta" href="https://www.instagram.com/fogonpya/"
-          ><img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón 2019</a
-        >
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="cookies.html">Política de Cookies</a>
+        <a href="terminos.html">Términos y Condiciones</a>
       </nav>
+      <a id="insta" href="https://www.instagram.com/fogonpya/">
+        <img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón
+      </a>
     </footer>
 </body>
 </html>

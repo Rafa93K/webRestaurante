@@ -33,7 +33,7 @@ $especiales = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <header>
   <div class="logo">
-    <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
+    <a href="index.php"><img src="Img/fogone_clarito.png" /></a>
   </div>
   <nav>
     <a href="carta.php">Carta</a>
@@ -58,7 +58,7 @@ $especiales = $stmt->fetchAll(PDO::FETCH_ASSOC);
           if ($img === null || trim($img) === "") $img = "default.jpg";
         ?>
         <div class="plato-card">
-          <img src="Img/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($p["nombre"]) ?>" />
+          <img src="Img/especial/<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($p["nombre"]) ?>" />
           <h3><?= htmlspecialchars($p["nombre"]) ?></h3>
           <p><?= htmlspecialchars($p["descripcion"]) ?></p>
           <p class="precio"><?= number_format((float)$p["precio"], 2, ",", ".") ?>€</p>
@@ -68,17 +68,7 @@ $especiales = $stmt->fetchAll(PDO::FETCH_ASSOC);
   </div>
 </main>
 
-<footer>
-  <nav>
-    <a href="#privacidad">Política de Privacidad</a>
-    <a href="#cookies">Política de Cookies</a>
-    <a href="#terminos">Términos y Condiciones</a>
-    <a id="insta" href="https://www.instagram.com/fogonpya/">
-      <img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón 2019
-    </a>
-  </nav>
-</footer>
-
+  <?php include 'Includes/footer.php'; ?>
 <!-- ocultar enlace especiales si config lo desactiva -->
 <script>
 document.addEventListener("DOMContentLoaded", async function () {

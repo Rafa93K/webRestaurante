@@ -12,9 +12,10 @@
         margin-top: 40px;
       }
 
+
       .receta-card {
         width: 750px;
-        background: rgb(194, 186, 186);
+        background: rgba(107, 101, 101, 0.64);
         border-radius: 12px;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         overflow: hidden;
@@ -34,10 +35,13 @@
       .receta-card ul {
         padding-left: 18px;
       }
+         .receta-card li{
+          list-style: none;
+         }
 
       .receta-card p {
         font-size: 14px;
-        color: #555;
+        color: #f5e5c0;
       }
 
       @keyframes fadeIn {
@@ -51,16 +55,7 @@
     </style>
   </head>
   <body class="conocenos">
-    <header>
-      <div class="logo">
-        <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
-      </div>
-      <nav>
-        <a href="carta.php">Carta</a>
-        <a href="reservar.html">Reservar</a>
-        <a href="conocenos.html">Conócenos</a>
-      </nav>
-    </header>
+    <?php include 'Includes/header.php'; ?>
 
     <main class="conocenos-main">
       <a
@@ -90,21 +85,14 @@
             src="https://www.google.com/maps/d/embed?mid=1cmzj9sj2tEzT3Rx8O0gMnGjH4AnpWzc&ehbc=2E312F&noprof=1"
           ></iframe>
         </div>
-      </section>
-      <div id="api"></div>
+      </section> <br> <br>
+      <div class="info-conocenos">
+        <h1>Recestas del mundo</h1>
+        <div id="api"></div>
+      </div>
     </main>
 
-    <footer>
-      <nav>
-        <a href="#privacidad">Política de Privacidad</a>
-        <a href="#cookies">Política de Cookies</a>
-        <a href="#terminos">Términos y Condiciones</a>
-        <a id="insta" href="https://www.instagram.com/fogonpya/">
-          <img src="Img/insta_1.png" />
-          &copy;Gastro-Bar Fogón 2019
-        </a>
-      </nav>
-    </footer>
+    <?php include 'Includes/footer.php'; ?>
     <script>
       async function cargarReceta() {
         try {

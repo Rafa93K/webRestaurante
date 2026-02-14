@@ -101,7 +101,7 @@
         $totalActual = $stmtCapacidad->fetch(PDO::FETCH_ASSOC)['total'];
 
         if (($totalActual + $comensalesUsuario) > $capacidadMaxima) {
-            header("Location: reservar.php?error=Aforo completo para este turno");
+            header("Location: reservar.php?error=No hay disponibilidad. Aforo completo!!");
             exit;
         }
           $sql = "INSERT INTO Reserva (nombre_cliente, telefono, fecha, hora, personas, mensaje)
@@ -133,13 +133,13 @@
   <body>
     <header>
       <div class="logo">
-        <a href="index.html"><img src="Img/fogone_clarito.png" /></a>
+        <a href="index.php"><img src="Img/fogone_clarito.png" /></a>
       </div>
       <nav>
         <nav>
           <a href="carta.php">Carta</a>
           <a href="reservar.php">Reservar</a>
-          <a href="conocenos.html">Conócenos</a>
+          <a href="conocenos.php">Conócenos</a>
         </nav>
       </nav>
     </header>
@@ -183,7 +183,7 @@
             id="personas" 
             name="comensalesUsuario"
             min="1"
-            max="20"
+            max="50"
             value="2"           
             required
           />
@@ -210,13 +210,13 @@
     </main>
     <footer>
       <nav>
-        <a href="#privacidad">Política de Privacidad</a>
-        <a href="#cookies">Política de Cookies</a>
-        <a href="#terminos">Términos y Condiciones</a>
-        <a id="insta" href="https://www.instagram.com/fogonpya/"
-          ><img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón 2019</a
-        >
+        <a href="privacidad.html">Política de Privacidad</a>
+        <a href="cookies.html">Política de Cookies</a>
+        <a href="terminos.html">Términos y Condiciones</a>
       </nav>
+      <a id="insta" href="https://www.instagram.com/fogonpya/">
+        <img src="Img/insta_1.png" /> &copy;Gastro-Bar Fogón
+      </a>
     </footer>
   </body>
   <script>
