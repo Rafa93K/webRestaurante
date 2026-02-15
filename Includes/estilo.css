@@ -13,6 +13,15 @@ COLORES
 * {
   font-family: "Playfair Display", serif;
 }
+/* Cookie párrafo */
+.cookie {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  color: #8f928d;
+  font-size: 14px;
+  z-index: 5;
+}
 body {
   margin: 0;
   background: #d3ccbc;

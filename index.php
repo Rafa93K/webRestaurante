@@ -15,6 +15,17 @@
         <div class="foto f3"><img src="Img/patio.jpg" /></div>
         <div class="foto f4"><img src="Img/barraF.jpg" /></div>
       </div>
+      <?php 
+        $visitas = $_COOKIE['visitas'] ?? 0;
+        $visitas++;
+        setcookie("visitas", $visitas, time()+3600*24*365, "/");
+        if($visitas==1){
+          echo "<p class='cookie'>Has visitado esta página por primera vez</p>";
+        }else{
+          echo "<p class='cookie'>Has visitado esta página $visitas veces</p>";
+        }
+        
+      ?>
     </main>
     <?php include 'Includes/footer.php'; ?>
   </body>
